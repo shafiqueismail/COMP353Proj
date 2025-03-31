@@ -65,3 +65,9 @@
     margin-top: 60px; /* equal or more than navbar height */
   }
   
+.containerColumns{
+  width: 500px;
+  padding: 50px;
+  margin: 20px;
+  background-color: white;
+}

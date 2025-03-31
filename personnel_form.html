@@ -115,11 +115,11 @@
 
   <div class="main-container">
     <!-- One Single Form -->
-    <form class="three-column-form" action="#" method="post">
+    <form class="containerColumns" action="#" method="post">
 
       <!-- Column 1: New Club Member Info -->
       <div class="form-column">
-        <h2>New Club Member Info</h2>
+        <h2>Personnel Member Informations</h2>
 
         <div class="form-group">
           <label for="personnelFirstName">First Name</label>
@@ -167,12 +167,6 @@
           </div>
 
         <div class="form-group">
-          <label for="personnelMandate">Mandate</label>
-          <input type="text" id="personnelMandate" name="personnelMandate" placeholder="Enter the mandate" />
-        </div>
-
-
-        <div class="form-group">
           <label for="personnelSSN">Social Security Number</label>
           <input type="text" id="personnelSSN" name="personnelSSN" placeholder="Enter your Social Security Number" />
         </div>
@@ -181,10 +175,26 @@
           <label for="personnelMCN">Medicare Card Number</label>
           <input type="text" id="personnelMCN" name="personnelMCN" placeholder="Enter your Medicare Card Number" />
         </div>
+
+        <div class="form-group">
+          <label for="personnelMandate">Mandate</label>
+          <input type="text" id="personnelMandate" name="personnelMandate" placeholder="Enter the mandate" />
+        </div>
+
+        <div class="form-group">
+          <label for="personnelDebut">Debut Date</label>
+          <input type="text" id="personnelDebut" name="personnelDebut" placeholder="Enter the beginning of mandate" />
+        </div>
+
+        <div class="form-group">
+          <label for="personnelEnd">End Date</label>
+          <input type="text" id="personnelEnd" name="personnelEnd" placeholder="Enter the end of mandate" />
+        </div>
+
       </div>
 
       <!-- A single "Submit" button for the entire form -->
-      <button class="form-button" type="submit">Register the member</button>
+      <button class="form-button" type="submit">Register the personnel</button>
     </form>
   </div>
 </div>
