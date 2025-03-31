@@ -1,0 +1,67 @@
+
+:root{
+    --primary:black;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    color:var(--primary);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 16px 32px;
+    background-color: rgb(148, 186, 216); 
+    z-index: 9999;          
+    height: 60px;           
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    /* push content down by the same height as your nav */
+    padding-top: 60px; /* Must be >= the nav's height */
+  }
+  
+
+.navbar > ul{
+    display:flex;
+    list-style-type: none;
+    gap:40px;
+}
+
+#logo{
+    font-size:30px;
+    text-decoration:none;
+}
+
+#logo:hover{
+    cursor:pointer;
+}
+
+.underline-text{
+    text-decoration: transparent;
+    text-underline-offset: 8px;
+    transition-property: text-decoration-color;
+    transition-duration: 1s;
+}
+
+.underline-text:hover{
+    text-decoration-color:var(--primary);
+    transition-property:text-decoration-color;
+    transition-duration:1s;
+}
+
+.content-wrapper {
+    margin-top: 60px; /* equal or more than navbar height */
+  }
+  
