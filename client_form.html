@@ -115,7 +115,7 @@
 
   <div class="main-container">
     <!-- One Single Form -->
-    <form class="three-column-form" action="#" method="post">
+    <form class="three-column-form" action="process_client_form.php" method="post">
 
       <!-- Column 1: New Club Member Info -->
       <div class="form-column">
@@ -133,7 +133,7 @@
 
         <div class="form-group">
           <label for="dateOfBirth">Date of Birth</label>
-          <input type="text" id="dateOfBirth" name="dateOfBirth" placeholder="Enter your Date Of Birth" />
+          <input type="text" id="dateOfBirth" name="dateOfBirth" placeholder="yyyy-mm-dd" />
         </div>
 
         <div class="form-group">
@@ -167,8 +167,13 @@
         </div>
 
         <div class="form-group">
-          <label for="sex">Sex</label>
-          <input type="text" id="Sex" name="Sex" placeholder="Male/Female" />
+          <label for="clientSex">Sex</label>
+          <input type="text" id="clientSex" name="clientSex" placeholder="Male/Female" />
+        </div>
+
+        <div class="form-group">
+          <label for="height">Height</label>
+          <input type="text" id="height" name="height" placeholder="Enter your height" />
         </div>
 
         <div class="form-group">
@@ -177,18 +182,18 @@
         </div>
 
         <div class="form-group">
-          <label for="phone">Phone</label>
-          <input type="text" id="phone" name="phone" placeholder="Enter your phone number" />
+          <label for="clientPhone">Phone</label>
+          <input type="text" id="clientPhone" name="clientPhone" placeholder="Enter your phone number" />
         </div>
 
         <div class="form-group">
-          <label for="SSN">Social Security Number</label>
-          <input type="text" id="SSN" name="SSN" placeholder="Enter your Social Security Number" />
+          <label for="clientSSN">Social Security Number</label>
+          <input type="text" id="clientSSN" name="clientSSN" placeholder="Enter your Social Security Number" />
         </div>
 
         <div class="form-group">
-          <label for="MCN">Medicare Card Number</label>
-          <input type="text" id="MCN" name="MCN" placeholder="Enter your Medicare Card Number" />
+          <label for="clientMCN">Medicare Card Number</label>
+          <input type="text" id="clientMCN" name="clientMCN" placeholder="Enter your Medicare Card Number" />
         </div>
       </div>
 
@@ -222,8 +227,8 @@
         </div>
 
         <div class="form-group">
-          <label for="FamilyProvince">Province</label>
-          <input type="text" id="FamilyProvince" name="FamilyProvince" placeholder="Enter your province" />
+          <label for="familyProvince">Province</label>
+          <input type="text" id="familyProvince" name="familyProvince" placeholder="Enter your province" />
         </div>
 
         <div class="form-group">
@@ -242,13 +247,13 @@
         </div>
 
         <div class="form-group">
-          <label for="FamilySSN">Social Security Number</label>
-          <input type="text" id="FamilySSN" name="FamilySSN" placeholder="Enter your Social Security Number" />
+          <label for="familySSN">Social Security Number</label>
+          <input type="text" id="familySSN" name="familySSN" placeholder="Enter your Social Security Number" />
         </div>
 
         <div class="form-group">
-          <label for="FamilyMCN">Medicare Card Number</label>
-          <input type="text" id="FamilyMCN" name="FamilyMCN" placeholder="Enter your Medicare Card Number" />
+          <label for="familyMCN">Medicare Card Number</label>
+          <input type="text" id="familyMCN" name="familyMCN" placeholder="Enter your Medicare Card Number" />
         </div>
       </div>
 
