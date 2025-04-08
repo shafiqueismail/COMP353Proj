@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Member Informations</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Additional style to hide the edit form until data is loaded */
+    #editForm {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1><a id="logo">Montréal Youth Volleyball Club</a></h1>
+      <ul>
+        <li><a class="underline-text" href="client_form.html">Club Member Registration</a></li>
+        <li><a class="underline-text" href="personnel_form.html">Personnel Registration</a></li>
+        <li><a class="underline-text" href="location_form.html">Location Registration</a></li>
+        <li><a class="underline-text" href="family_member_form.html">Family Member Registration</a></li>
+        <li><a class="underline-text" href="secondary_family_form.html">Secondary Family Member Registration</a></li>
+        <li><a class="underline-text" href="http://localhost/COMP353_Main_Project/edit_member.html">Search/Modify My Info</a></li>
+
+    </ul>
+    </nav>
+  </header>
+
+  <div class="content-wrapper">
+    <div class="main-container">
+      <!-- Section 1: Form to enter the Club Member Number -->
+      <form id="searchForm" onsubmit="loadMemberInfo(event)">
+        <h2>Enter Your Club Member Number</h2>
+        <input type="number" id="clubMemberNumberInput" placeholder="e.g. 123" required>
+        <br>
+        <button type="submit" class="form-button">Load My Info</button>
+      </form>
+
+      <!-- Section 2: Pre-filled form for editing -->
+      <form id="editForm" action="http://127.0.0.1:80/COMP353_Main_Project/update_member.php" method="post">
+        <h2>Edit Member Information</h2>
+        <!-- Hidden field to store Club Member Number -->
+        <input type="hidden" id="clubMemberNumber" name="clubMemberNumber">
+        
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" required>
+        <br><br>
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" required>
+        <br><br>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+        <label for="Age">Age</label>
+        <input type="number" id="Age" name="Age" required>
+        <br><br>
+        <label for="Sex">Sex</label>
+        <input type="text" id="Sex" name="Sex" required>
+        <br><br>
+        <label for="dateOfBirth">Date of Birth</label>
+        <input type="text" id="dateOfBirth" name="dateOfBirth" required>
+        <br><br>
+        <label for="Height">Height</label>
+        <input type="text" id="Height" name="Height" required>
+        <br><br>
+        <label for="Weight">Weight</label>
+        <input type="text" id="Weight" name="Weight" required>
+        <br><br>
+        <label for="telephoneNumber">Phone</label>
+        <input type="text" id="telephoneNumber" name="telephoneNumber" required>
+        <br><br>
+        <label for="SSN">SSN</label>
+        <input type="text" id="SSN" name="SSN" required>
+        <br><br>
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" required>
+        <br><br>
+        <label for="City">City</label>
+        <input type="text" id="City" name="City" required>
+        <br><br>
+        <label for="Province">Province</label>
+        <input type="text" id="Province" name="Province" required>
+        <br><br>
+        <label for="postalCode">Postal Code</label>
+        <input type="text" id="postalCode" name="postalCode" required>
+        <br><br>
+        <label for="role">Role</label>
+        <input type="text" id="role" name="role" required>
+        <br><br>
+        <label for="isActive">Is Active</label>
+        <input type="text" id="isActive" name="isActive" required>
+        <br><br>
+        <br>
+        <button type="submit" class="form-button">Update Member Info</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function loadMemberInfo(event) {
+  event.preventDefault(); // Prevent the form from submitting normally
+
+  let memberNumber = document.getElementById('clubMemberNumberInput').value;
+  const url = `get_member_info.php?clubMemberNumber=${encodeURIComponent(memberNumber)}`;
+  console.log("Fetch URL:", url);
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      console.log('Fetched data:', data);
+      if (data.error) {
+        alert(data.error);
+      } else {
+            // Populate the form fields with the fetched data using exact key names
+            document.getElementById('clubMemberNumber').value = data.clubMemberNumber;
+            document.getElementById('firstName').value = data.firstName || '';
+            document.getElementById('lastName').value = data.lastName || '';
+            document.getElementById('email').value = data.email || '';
+            document.getElementById('Age').value = data.Age || '';
+            document.getElementById('Sex').value = data.Sex || '';
+            document.getElementById('dateOfBirth').value = data.dateOfBirth || '';
+            document.getElementById('Height').value = data.Height || '';
+            document.getElementById('Weight').value = data.Weight || '';
+            document.getElementById('telephoneNumber').value = data.telephoneNumber || '';
+            document.getElementById('SSN').value = data.SSN || '';
+            document.getElementById('address').value = data.Address || '';
+            document.getElementById('City').value = data.City || '';
+            document.getElementById('Province').value = data.Province || '';
+            document.getElementById('postalCode').value = data.postalCode || '';
+            document.getElementById('role').value = data.role || '';
+            document.getElementById('isActive').value = data.isActive || '';
+  
+            // Hide the search form and show the edit form
+            document.getElementById('searchForm').style.display = 'none';
+            document.getElementById('editForm').style.display = 'block';
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('An error occurred while fetching your information.');
+        });
+    }
+  </script>
+  
+</body>
+</html>
