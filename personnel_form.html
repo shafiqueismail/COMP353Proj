@@ -102,10 +102,12 @@
     <nav class="navbar">
       <h1><a id="logo">Montréal Youth Volleyball Club</a></h1>
       <ul>
-        <li><a class="underline-text" href="client_form.html">Club Member Registration</a></li>
-        <li><a class="underline-text" href="personnel_form.html">Personnel Registration</a></li>
-        <li><a class="underline-text" href="location_form.html">Location Regirtration</a></li>
-        <li><a class="underline-text" href="team_making_form.html">Team Making</a></li>
+        <li><a class="underline-text" href="http://localhost/COMP353_Main_Project/client_form.html">Club Member Registration</a></li>
+        <li><a class="underline-text" href="http://localhost/COMP353_Main_Project/personnel_form.html">Personnel Registration</a></li>
+        <li><a class="underline-text" href="http://localhost/COMP353_Main_Project/location_form.html">Location Regirtration</a></li>
+        <li><a class="underline-text" href="http://localhost/COMP353_Main_Project/family_member_form.html">Family Member Registration</a></li>
+        <li><a class="underline-text" href="http://localhost/COMP353_Main_Project/secondary_family_form.html">Secondary Family Member Registration</a></li>
+        <li><a class="underline-text" href="http://localhost/COMP353_Main_Project/edit_member.html">Modify Club Member</a></li>
       </ul>
     </nav>
   </header>
@@ -115,7 +117,7 @@
 
   <div class="main-container">
     <!-- One Single Form -->
-    <form class="containerColumns" action="#" method="post">
+    <form class="containerColumns" action="http://127.0.0.1:80/COMP353_Main_Project/index3.php" method="post">
 
       <!-- Column 1: New Club Member Info -->
       <div class="form-column">
@@ -133,12 +135,12 @@
 
         <div class="form-group">
           <label for="personnelDateOfBirth">Date of Birth</label>
-          <input type="text" id="personnelDateOfBirth" name="personnelDateOfBirth" placeholder="Enter your Date Of Birth" />
+          <input type="date" id="personnelDateOfBirth" name="personnelDateOfBirth" />
         </div>
 
         <div class="form-group">
           <label for="personnelEmail">Email</label>
-          <input type="text" id="personnelEmail" name="personnelEmail" placeholder="Enter your email" />
+          <input type="text" id="personnelEmail" name="personnelEmail" placeholder="example@example.com" />
         </div>
 
         <div class="form-group">
@@ -158,12 +160,12 @@
 
         <div class="form-group">
           <label for="personnelPostalCode">Postal Code</label>
-          <input type="text" id="personnelPostalCode" name="personnelPostalCode" placeholder="Enter your Postal Code" />
+          <input type="text" id="personnelPostalCode" name="personnelPostalCode" placeholder="H1H 1H1" />
         </div>
 
         <div class="form-group">
             <label for="personnelPhone">Phone</label>
-            <input type="text" id="personnelPhone" name="personnelPhone" placeholder="Enter your phone number" />
+            <input type="text" id="personnelPhone" name="personnelPhone" placeholder="1112223333" />
           </div>
 
         <div class="form-group">
@@ -178,18 +180,30 @@
 
         <div class="form-group">
           <label for="personnelMandate">Mandate</label>
-          <input type="text" id="personnelMandate" name="personnelMandate" placeholder="Enter the mandate" />
+          <input type="text" id="personnelMandate" name="personnelMandate" placeholder="volunteer/salaried" />
+        </div>
+
+        <div class="form-group">
+          <label for="locationID">Where will the employee work?</label>
+          <input type="text" id="personnelLocationID" name="personnelLocationID" placeholder="Enter the location number" />
         </div>
 
         <div class="form-group">
           <label for="personnelDebut">Debut Date</label>
-          <input type="text" id="personnelDebut" name="personnelDebut" placeholder="Enter the beginning of mandate" />
+          <input type="date" id="personnelDebut" name="personnelDebut"/>
         </div>
 
         <div class="form-group">
           <label for="personnelEnd">End Date</label>
-          <input type="text" id="personnelEnd" name="personnelEnd" placeholder="Enter the end of mandate" />
+          <input type="date" id="personnelEnd" name="personnelEnd"/>
         </div>
+
+        <div class="form-group">
+          <label for="personnelRole">Role</label>
+          <input type="text" id="personnelRole" name="personnelRole"/>
+        </div>
+
+
 
       </div>
 
